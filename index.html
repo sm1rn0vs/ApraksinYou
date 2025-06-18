@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО "Апраксин Трейд" - Оптовые поставки товаров из Апраксина Двора и интернета</title>
+    <meta name="description" content="Оптовый поставщик товаров из рынка Апраксин Двор в Санкт-Петербурге и интернет-магазинов. Широкий ассортимент по выгодным ценам.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #1a5276;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #f39c12;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://example.com/apraksin-market.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+            color: #1a5276;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-source {
+            display: inline-block;
+            background-color: #eaf2f8;
+            color: #2980b9;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .advantages {
+            background-color: #eaf2f8;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .advantage-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .advantage-icon {
+            font-size: 40px;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+        
+        .advantage-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a5276;
+        }
+        
+        footer {
+            background-color: #1a5276;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #f39c12;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #ddd;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Апраксин <span>Трейд</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">О компании</a></li>
+                        <li><a href="#products">Товары</a></li>
+                        <li><a href="#advantages">Преимущества</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Оптовые поставки товаров из Апраксина Двора и интернета</h1>
+            <p>Широкий ассортимент по выгодным ценам с доставкой по всей России</p>
+            <a href="#contacts" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">О нашей компании</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Мы работаем на рынке Апраксин Двор в Санкт-Петербурге более 10 лет и специализируемся на оптовых поставках различных товаров как с рынка, так и из ведущих интернет-магазинов.</p>
+                <p>Наша компания предлагает выгодные условия сотрудничества для розничных магазинов, перепродавцов и дропшипперов по всей России.</p>
+                <p>Мы тщательно отбираем поставщиков и контролируем качество товаров, чтобы вы могли быть уверены в своей покупке.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="products" class="section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Наши товары</h2>
+            <div class="products">
+                <!-- Товар 1 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://example.com/product1.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Одежда оптом (футболки, худи, джинсы)</h3>
+                        <span class="product-source">Апраксин Двор</span>
+                        <div class="product-price">от 350 руб./шт.</div>
+                        <a href="#contacts" class="btn" style="padding: 8px 20px; font-size: 14px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Товар 2 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://example.com/product2.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Гаджеты и аксессуары</h3>
+                        <span class="product-source">Интернет-поставщики</span>
+                        <div class="product-price">от 500 руб./шт.</div>
+                        <a href="#contacts" class="btn" style="padding: 8px 20px; font-size: 14px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Товар 3 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://example.com/product3.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Косметика и парфюмерия</h3>
+                        <span class="product-source">Апраксин Двор</span>
+                        <div class="product-price">от 200 руб./шт.</div>
+                        <a href="#contacts" class="btn" style="padding: 8px 20px; font-size: 14px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Товар 4 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://example.com/product4.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Товары для дома</h3>
+                        <span class="product-source">Интернет-поставщики</span>
+                        <div class="product-price">от 150 руб./шт.</div>
+                        <a href="#contacts" class="btn" style="padding: 8px 20px; font-size: 14px;">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="advantages" class="section advantages">
+        <div class="container">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">✓</div>
+                    <h3 class="advantage-title">Доступные цены</h3>
+                    <p>Мы работаем напрямую с производителями и поставщиками, что позволяет предлагать лучшие цены на рынке.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">✈</div>
+                    <h3 class="advantage-title">Быстрая доставка</h3>
+                    <p>Отправка товаров в день заказа. Работаем с надежными транспортными компаниями по всей России.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🔄</div>
+                    <h3 class="advantage-title">Гибкие условия</h3>
+                    <p>Индивидуальный подход к каждому клиенту. Возможность работы по дропшиппингу и другим схемам.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3 class="advantage-title">Контроль качества</h3>
+                    <p>Все товары проходят проверку перед отправкой. Гарантия на продукцию.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacts" class="section">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" placeholder="Укажите интересующие вас товары и условия сотрудничества"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#advantages">Преимущества</a></li>
+                        <li><a href="#products">Товары</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Санкт-Петербург, Апраксин Двор</li>
+                        <li>Телефон: +7 (967) 564-30-27</li>
+                        <li>Email: mchlsmirnoff@gmail.com</li>
+                        <li>Режим работы: круглосуточно</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li>Оптовые поставки</li>
+                        <li>Дропшиппинг</li>
+                        <li>Поиск товаров под заказ</li>
+                        <li>Доставка по России</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 ООО "Апраксин Трейд". Все права защищены.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
